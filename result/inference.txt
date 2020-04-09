@@ -1,0 +1,2 @@
+Inference detlandmark/inference_images\attack\0001_00_00_01_0.jpg attack_prob=0.996613
+Inference detlandmark/inference_images\genuine\0001_00_00_01_0.jpg attack_prob=0.004107

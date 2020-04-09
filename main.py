@@ -63,7 +63,7 @@ data_transforms = {
 def train(**kwargs):
 	# 根据命令行参数更新配置
 	opt.parse(kwargs)
-	vis = Visualizer(opt.env)
+	# vis = Visualizer(opt.env)
 	# step1: 模型
 	model = getattr(models, opt.model)()
 
@@ -192,30 +192,30 @@ def train(**kwargs):
 		tpr1 = tprs['TPR(1.%)']
 		
 
-		vis.plot_many_stack({'train_loss':train_loss.value()[0],\
-						'val_loss':val_loss.value()[0]},win_name ="Loss")
-		vis.plot_many_stack({'train_acc':train_acc.value()[0],\
-						'val_acc':val_acc.value()[0]},win_name = 'Acc')
-		vis.log("epoch:{epoch},lr:{lr},\
-				train_loss:{train_loss},train_acc:{train_acc},\
-				val_loss:{val_loss},val_acc:{val_acc},\
-				train_cm:{train_cm},val_cm:{val_cm}"
-	   .format(
-				   epoch = epoch,
-				   train_loss = train_loss.value()[0],
-				   train_acc = train_acc.value()[0],
-				   val_loss = val_loss.value()[0],
-				   val_acc = val_acc.value()[0],
-				   train_cm=str(confusion_matrix.value()),
-				   val_cm = str(val_cm.value()),
-				   lr=lr))
+		# vis.plot_many_stack({'train_loss':train_loss.value()[0],\
+		# 				'val_loss':val_loss.value()[0]},win_name ="Loss")
+		# vis.plot_many_stack({'train_acc':train_acc.value()[0],\
+		# 				'val_acc':val_acc.value()[0]},win_name = 'Acc')
+		# vis.log("epoch:{epoch},lr:{lr},\
+		# 		train_loss:{train_loss},train_acc:{train_acc},\
+		# 		val_loss:{val_loss},val_acc:{val_acc},\
+		# 		train_cm:{train_cm},val_cm:{val_cm}"
+	  #  .format(
+		# 		   epoch = epoch,
+		# 		   train_loss = train_loss.value()[0],
+		# 		   train_acc = train_acc.value()[0],
+		# 		   val_loss = val_loss.value()[0],
+		# 		   val_acc = val_acc.value()[0],
+		# 		   train_cm=str(confusion_matrix.value()),
+		# 		   val_cm = str(val_cm.value()),
+		# 		   lr=lr))
 		'''
 		if v_loss > previous_loss:          
 			lr = lr * opt.lr_decay
 			for param_group in optimizer.param_groups:
 				param_group['lr'] = lr
 		'''
-		vis.plot_many_stack({'lr':lr},win_name ='lr')
+		# vis.plot_many_stack({'lr':lr},win_name ='lr')
 		previous_loss = val_loss.value()[0]
 		if tpr1 > best_tpr:
 			best_tpr = tpr1

@@ -3,17 +3,17 @@ import torch
 import warnings
 
 class DefaultConfig(object):
-   model = 'MyresNet34' # 使用的模型，名字必须与models/__init__.py中的名字一致
+   model = 'MydetNet59' # 使用的模型，名字必须与models/__init__.py中的名字一致
    env = model #
    ATTACK = 1
    GENUINE = 0
    train_filelists=[
-    ['/home/zhoujinghui/zjh_proj/antispoofing_proj/NUAA_raw/ClientRaw','/home/zhoujinghui/zjh_proj/antispoofing_proj/NUAA_raw/client_train_raw.txt',GENUINE],
-    ['/home/zhoujinghui/zjh_proj/antispoofing_proj/NUAA_raw/ImposterRaw','/home/zhoujinghui/zjh_proj/antispoofing_proj/NUAA_raw/imposter_train_raw.txt',ATTACK]
+    ['C:/Users/ADMINS/Desktop/awesome_face_antispoofing/raw/ClientRaw','C:/Users/ADMINS/Desktop/awesome_face_antispoofing/raw/client_train_raw.txt',GENUINE],
+    ['C:/Users/ADMINS/Desktop/awesome_face_antispoofing/raw/ImposterRaw','C:/Users/ADMINS/Desktop/awesome_face_antispoofing/raw/imposter_train_raw.txt',ATTACK]
     ]
    test_filelists=[
-    ['/home/zhoujinghui/zjh_proj/antispoofing_proj/NUAA_raw/ClientRaw','/home/zhoujinghui/zjh_proj/antispoofing_proj/NUAA_raw/client_test_raw.txt',GENUINE],
-    ['/home/zhoujinghui/zjh_proj/antispoofing_proj/NUAA_raw/ImposterRaw','/home/zhoujinghui/zjh_proj/antispoofing_proj/NUAA_raw/imposter_test_raw.txt',ATTACK]
+    ['C:/Users/ADMINS/Desktop/awesome_face_antispoofing/raw/ClientRaw','C:/Users/ADMINS/Desktop/awesome_face_antispoofing/raw/client_test_raw.txt',GENUINE],
+    ['C:/Users/ADMINS/Desktop/awesome_face_antispoofing/raw/ImposterRaw','C:/Users/ADMINS/Desktop/awesome_face_antispoofing/raw/imposter_test_raw.txt',ATTACK]
     ]
 
    #load_model_path = 'checkpoints/model.pth' # 加载预训练的模型的路径，为None代表不加载
